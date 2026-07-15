@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Print Desk Cards</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    background:white;
+    margin:20px;
+}
+
+.print-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+.print-card{
+
+    border:2px solid #ddd;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    text-align:center;
+
+    break-inside:avoid;
+
+}
+
+.print-card img{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #0d47a1;
+
+}
+
+.print-card h4{
+
+    font-size:18px;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+
+.print-card canvas{
+border-radius:0 !important;
+    margin:auto;
+
+}
+
+@media print{
+
+button{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="text-center mb-4">
+
+<button class="btn btn-success"
+onclick="window.print()">
+
+🖨 Print Now
+
+</button>
+
+</div>
+
+<div id="printContainer"
+class="print-grid">
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="print.js"></script>
+
+</body>
+
+</html>

@@ -1,296 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>9E Digital Hub</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9E Digital Hub — Shree N. D. Desai Sarvajanik High School, Vankal">
+  <title>9E Digital Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light container py-3" aria-label="Main navigation">
+      <a class="navbar-brand brand" href="index.html">
+        <img src="Images/logo.png" alt="School logo" class="brand-logo" onerror="this.style.display='none'">
+        <span>9E Digital Hub</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="students.html">Students</a></li>
+          <li class="nav-item"><a class="nav-link" href="timetable.html">Timetable</a></li>
+          <li class="nav-item"><a class="nav-link" href="birthday.html">Birthdays</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-
-<nav class="navbar navbar-expand-lg shadow-sm">
-
-<div class="container">
-
-<a class="navbar-brand fw-bold" href="#">
-
-<img src="Images/logo.png" class="logo">
-
-<span>9E Digital Hub</span>
-
-</a>
-
-</div>
-
-</nav>
-
-
-<section class="hero">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-lg-6">
-
-<h5 class="text-success">
-WELCOME TO
-</h5>
-
-<h1>
-9E DIGITAL HUB
-</h1>
-
-<h4 class="school-title">
-Shri N D Desai Sarvajanik High School, Vankal
-</h4>
-
-<p>
-
-A Smart Digital Classroom Experience
-
-</p>
-
-<a href="#" class="btn btn-primary btn-lg">
-
-<i class="fa-solid fa-users"></i>
-
-Meet Our Students
-
-</a>
-
-</div>
-
-
-<div class="col-lg-6 text-center">
-
-<img src="Images/classphoto.png" class="hero-image">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- Statistics Section -->
-
-<section class="container my-5">
-
-    <div class="row g-4">
-
-        <div class="col-md-3">
-
-            <div class="stats-card">
-
-                <i class="fa-solid fa-user-graduate stats-icon"></i>
-
-                <h2>72</h2>
-
-                <p>Total Students</p>
-
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="eyebrow"><i class="fa-solid fa-sparkles"></i> WELCOME TO</p>
+            <h1>9E <span>Digital Hub</span></h1>
+            <p class="school-name">Shree N. D. Desai Sarvajanik High School, Vankal</p>
+            <p class="hero-copy">A smart digital classroom where every student has a story to share.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-primary btn-lg rounded-pill px-4" href="students.html"><i class="fa-solid fa-users me-2"></i>Meet Our Students</a>
+              <a class="btn btn-outline-primary btn-lg rounded-pill px-4" href="#today-birthday"><i class="fa-solid fa-cake-candles me-2"></i>Today's Birthday</a>
             </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="stats-card">
-
-                <i class="fa-solid fa-person stats-icon"></i>
-
-                <h2>35</h2>
-
-                <p>Boys</p>
-
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-photo-wrap">
+              <img src="Images/classphoto.png" class="hero-photo" alt="Class 9E students" onerror="this.closest('.hero-photo-wrap').classList.add('image-missing')">
+              <div class="hero-photo-caption"><i class="fa-solid fa-graduation-cap"></i> Class 9E · 2026–27</div>
             </div>
-
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-md-3">
-
-            <div class="stats-card">
-
-                <i class="fa-solid fa-person-dress stats-icon"></i>
-
-                <h2>37</h2>
-
-                <p>Girls</p>
-
-            </div>
-
+    <section class="stats-section" aria-label="Class statistics">
+      <div class="container">
+        <div class="row g-3 g-md-4">
+          <div class="col-6 col-lg-3"><article class="stat-card"><i class="fa-solid fa-user-graduate"></i><strong data-count="72">0</strong><span>Total Students</span></article></div>
+          <div class="col-6 col-lg-3"><article class="stat-card"><i class="fa-solid fa-child"></i><strong data-count="35">0</strong><span>Boys</span></article></div>
+          <div class="col-6 col-lg-3"><article class="stat-card"><i class="fa-solid fa-child-dress"></i><strong data-count="37">0</strong><span>Girls</span></article></div>
+          <div class="col-6 col-lg-3"><article class="stat-card"><i class="fa-solid fa-calendar-days"></i><strong class="year-stat">2026–27</strong><span>Academic Year</span></article></div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-md-3">
-
-            <div class="stats-card">
-
-                <i class="fa-solid fa-calendar-days stats-icon"></i>
-
-                <h2>2025-26</h2>
-
-                <p>Academic Year</p>
-
-            </div>
-
+    <section id="today-birthday" class="section-space">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">CELEBRATE TOGETHER</p><h2>Today's Birthday</h2></div>
+        <!-- Filled automatically from data/students.json by script.js. -->
+        <div id="todayBirthdayWidget" class="birthday-widget" aria-live="polite">
+          <div class="birthday-loading"><i class="fa-solid fa-cake-candles"></i><span>Loading birthday highlights…</span></div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-<section class="container my-5">
-
-<h2 class="section-title text-center mb-5">
-
-Quick Access
-<section class="container my-5">
-
-    <div class="row">
-
-        <div class="col-lg-6">
-
-            <div class="birthday-box">
-
-                <h3><i class="fa-solid fa-cake-candles"></i> Upcoming Birthdays</h3>
-
-                <div class="birthday-item">
-                    <img src="Photos/P1.jpeg">
-                    <div>
-                        <h5>Student Name</h5>
-                        <small>15 May</small>
-                    </div>
-                    <span>3 Days</span>
-                </div>
-
-                <div class="birthday-item">
-                    <img src="Photos/P2.jpeg">
-                    <div>
-                        <h5>Student Name</h5>
-                        <small>18 May</small>
-                    </div>
-                    <span>6 Days</span>
-                </div>
-
-                <div class="birthday-item">
-                    <img src="Photos/P3.jpeg">
-                    <div>
-                        <h5>Student Name</h5>
-                        <small>21 May</small>
-                    </div>
-                    <span>9 Days</span>
-                </div>
-
-            </div>
-
+    <section class="section-space pt-0">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">EXPLORE THE HUB</p><h2>Quick Access</h2></div>
+        <div class="row g-4">
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="students.html"><i class="fa-solid fa-users"></i><span>Students</span><small>Explore profiles</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="timetable.html"><i class="fa-solid fa-calendar-days"></i><span>Timetable</span><small>Class schedule</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="birthday.html"><i class="fa-solid fa-cake-candles"></i><span>Birthdays</span><small>Celebrate together</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="science.html"><i class="fa-solid fa-flask"></i><span>Maths &amp; Science</span><small>Learn and discover</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span><small>Class memories</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="achievement.html"><i class="fa-solid fa-trophy"></i><span>Achievements</span><small>Celebrate success</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="notice.html"><i class="fa-solid fa-bullhorn"></i><span>Notice Board</span><small>Latest updates</small></a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a class="hub-card" href="contact.html"><i class="fa-solid fa-address-book"></i><span>Contact</span><small>Stay connected</small></a></div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-lg-6">
+    <section class="section-space pt-0">
+      <div class="container"><div class="quote-panel"><i class="fa-solid fa-quote-left"></i><blockquote id="quoteText">Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</blockquote><p id="quoteAuthor">— Malcolm X</p></div></div>
+    </section>
+  </main>
 
-            <div class="quote-box">
-
-                <h3>Quote of the Day</h3>
-
-                <h2>
-                “Education is the passport to the future.”
-                </h2>
-
-                <p>— Malcolm X</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-</h2>
-
-<div class="row g-4">
-
-<div class="col-md-4 col-lg-3">
-<a href="students.html" class="text-decoration-none">
-
-<div class="dashboard-card">
-<i class="fa-solid fa-users"></i>
-<h4>Students</h4>
-</div>
-</a>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-calendar-days"></i>
-<h4>Timetable</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-cake-candles"></i>
-<h4>Birthday</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-flask"></i>
-<h4>Maths & Science</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-images"></i>
-<h4>Gallery</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-trophy"></i>
-<h4>Achievements</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-bullhorn"></i>
-<h4>Notice Board</h4>
-</div>
-</div>
-
-<div class="col-md-4 col-lg-3">
-<div class="dashboard-card">
-<i class="fa-solid fa-address-book"></i>
-<h4>Contact</h4>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="script.js"></script>
-
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"><p>© <span id="currentYear"></span> 9E Digital Hub</p><p>Learn · Explore · Inspire</p></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>

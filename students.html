@@ -28,7 +28,7 @@
 
 <div class="row justify-content-center mb-5">
 
-<div class="col-lg-6">
+<div class="col-lg-5">
 
 <div class="input-group input-group-lg">
 
@@ -44,6 +44,45 @@
     class="form-control form-control-lg"
     placeholder="Search by Name, Roll No or GR No...">
 
+<div class="filter-container">
+
+<button class="filter-btn active" onclick="filterStudents('all', this)">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span>All</span>
+
+<small id="allCount">72</small>
+
+</button>
+
+<button class="filter-btn" onclick="filterStudents('Male', this)">
+
+<i class="fa-solid fa-child"></i>
+
+<span>Boys</span>
+
+<small id="boyCount">35</small>
+
+</button>
+
+<button class="filter-btn" onclick="filterStudents('Female', this)">
+
+<i class="fa-solid fa-child-dress"></i>
+
+<span>Girls</span>
+
+<small id="girlCount">37</small>
+
+</button>
+
+</div>
+
+<h5 class="text-center mb-4">
+
+Showing <span id="studentCount">72</span> Students
+
+</h5>
 </div>
 
 </div>

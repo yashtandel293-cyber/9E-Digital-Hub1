@@ -1,186 +1,175 @@
+const profileContainer = document.getElementById('studentProfile');
 const params = new URLSearchParams(window.location.search);
+const selectedGr = params.get('gr');
 
-const gr = params.get("gr");
+function safeText(value, fallback = 'Not added yet') {
+  const text = String(value ?? '').trim();
+  return text && text.toLowerCase() !== 'nan' ? text : fallback;
+}
 
-fetch("data/students.json")
-.then(response => response.json())
-.then(students => {
+function escapeHtml(value) {
+  return safeText(value).replace(/[&<>'"]/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#039;', '"': '&quot;'
+  }[char]));
+}
 
-const student = students.find(s => String(s.gr) === String(gr));
+function parseDob(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return null;
 
-const profile = document.getElementById("studentProfile");
+  // Supports DD/MM/YYYY, D/M/YYYY, and Excel-style YYYY-MM-DD 00:00:00 values.
+  const dmy = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (dmy) return new Date(Number(dmy[3]), Number(dmy[2]) - 1, Number(dmy[1]));
 
-profile.innerHTML = `
+  const ymd = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (ymd) return new Date(Number(ymd[1]), Number(ymd[2]) - 1, Number(ymd[3]));
 
-<div class="row justify-content-center">
+  const date = new Date(raw);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
 
-<div class="col-lg-10">
+function displayDob(value) {
+  const date = parseDob(value);
+  return date
+    ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(date)
+    : safeText(value);
+}
 
-<div class="dashboard-card p-5">
+function isBirthdayToday(value) {
+  const dob = parseDob(value);
+  if (!dob) return false;
+  const today = new Date();
+  return dob.getDate() === today.getDate() && dob.getMonth() === today.getMonth();
+}
 
-<div class="row align-items-center">
+function birthdayLabel(value) {
+  const dob = parseDob(value);
+  if (!dob) return 'Birthday details coming soon';
+  return new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long' }).format(dob);
+}
 
-<div class="col-lg-4 text-center">
+function genderIcon(gender) {
+  return String(gender).toLowerCase() === 'female' ? 'fa-person-dress' : 'fa-person';
+}
 
-<img src="Photos/${student.photo}" class="profile-photo">
+function infoCard(icon, label, value, accent = '') {
+  return `
+    <article class="profile-info-card ${accent}">
+      <span class="profile-info-icon"><i class="fa-solid ${icon}"></i></span>
+      <div>
+        <p>${label}</p>
+        <h3>${escapeHtml(value)}</h3>
+      </div>
+    </article>`;
+}
 
-<h2 class="profile-name mt-4">
+function showError(message) {
+  profileContainer.innerHTML = `
+    <section class="profile-error-card">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <h1>Profile unavailable</h1>
+      <p>${message}</p>
+      <a href="students.html" class="profile-primary-btn">Back to Students</a>
+    </section>`;
+}
 
-${student.name}
+function renderProfile(student) {
+  const name = safeText(student.name);
+  const birthdayToday = isBirthdayToday(student.dob);
+  const gender = safeText(student.gender);
+  const achievement = safeText(student.achievement, 'No achievement added yet');
 
-</h2>
+  document.title = `${name} | 9E Digital Hub`;
 
-<div class="mt-3">
+  profileContainer.innerHTML = `
+    <section class="profile-v2-card">
+      ${birthdayToday ? `
+        <div class="birthday-celebration-banner">
+          <i class="fa-solid fa-cake-candles"></i>
+          Happy Birthday! Wishing you a wonderful year ahead.
+          <i class="fa-solid fa-party-horn"></i>
+        </div>` : ''}
 
-<span class="badge bg-success fs-6">
+      <div class="profile-v2-grid">
+        <aside class="profile-identity-panel">
+          <div class="profile-photo-wrap">
+            <img class="profile-v2-photo" src="Photos/${encodeURIComponent(safeText(student.photo, ''))}" alt="Photo of ${escapeHtml(name)}" onerror="this.src='https://placehold.co/360x360/e8f0ff/0b3d91?text=9E';">
+            <span class="profile-online-dot" title="Student profile"></span>
+          </div>
 
-<i class="fa-solid fa-user"></i>
+          <span class="profile-roll-pill"><i class="fa-solid fa-id-badge"></i> Roll No. ${escapeHtml(student.roll)}</span>
+          <h1>${escapeHtml(name)}</h1>
 
-${student.gender}
+          <div class="profile-chips">
+            <span class="profile-chip profile-gender-chip"><i class="fa-solid ${genderIcon(gender)}"></i>${escapeHtml(gender)}</span>
+            <span class="profile-chip profile-birthday-chip"><i class="fa-solid fa-cake-candles"></i>${birthdayLabel(student.dob)}</span>
+          </div>
 
-</span>
+          <a href="students.html" class="profile-back-button">
+            <i class="fa-solid fa-arrow-left"></i> Back to Students
+          </a>
+        </aside>
 
-</div>
-
-<div class="mt-4">
-
-<a href="students.html" class="btn btn-light btn-lg rounded-pill px-4">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Back to Students
-
-</a>
-
-</div>
-
-</div>
-
-<div class="col-md-8">
-
-<h4 class="mb-4">
-
-Student Information
-
-</h4>
-
-<div class="row g-3">
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-id-card"></i>
-<h6>Roll No</h6>
-<p>${student.roll}</p>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-fingerprint"></i>
-<h6>GR No</h6>
-<p>${student.gr}</p>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-cake-candles"></i>
-<h6>Date of Birth</h6>
-<p>${student.dob}</p>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-book"></i>
-<h6>Favourite Subject</h6>
-<p>${student.subject}</p>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-futbol"></i>
-<h6>Favourite Sport</h6>
-<p>${student.sport}</p>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="info-card">
-<i class="fa-solid fa-rocket"></i>
-<h6>Dream Career</h6>
-<p>${student.dream}</p>
-</div>
-</div>
-
-</div>
-<div class="row mt-4">
-
-    <div class="col-md-6">
-
-        <div class="card shadow border-0 rounded-4">
-
-            <div class="card-body">
-
-                <h4>
-                    <i class="fa-solid fa-comment text-primary"></i>
-                    About Me
-                </h4>
-
-                <hr>
-
-                <p class="fs-5">
-
-                    ${student.about}
-
-                </p>
-
+        <div class="profile-content-panel">
+          <div class="profile-section-heading">
+            <div>
+              <p class="profile-eyebrow">9E DIGITAL HUB</p>
+              <h2>Student Snapshot</h2>
             </div>
+            <span class="profile-gr-label">GR No. ${escapeHtml(student.gr)}</span>
+          </div>
 
+          <div class="profile-info-grid">
+            ${infoCard('fa-id-card', 'Roll Number', student.roll, 'blue')}
+            ${infoCard('fa-fingerprint', 'GR Number', student.gr, 'purple')}
+            ${infoCard('fa-cake-candles', 'Date of Birth', displayDob(student.dob), 'orange')}
+            ${infoCard('fa-book-open', 'Favourite Subject', student.subject, 'green')}
+            ${infoCard('fa-medal', 'Favourite Sport', student.sport, 'blue')}
+            ${infoCard('fa-rocket', 'Dream Career', student.dream, 'purple')}
+          </div>
+
+          <div class="profile-story-grid">
+            <article class="profile-story-card about-card">
+              <span class="profile-story-icon"><i class="fa-solid fa-comment-dots"></i></span>
+              <div>
+                <p class="profile-card-label">ABOUT ME</p>
+                <h3>${escapeHtml(student.about)}</h3>
+              </div>
+            </article>
+
+            <article class="profile-story-card achievement-card">
+              <span class="profile-story-icon"><i class="fa-solid fa-trophy"></i></span>
+              <div>
+                <p class="profile-card-label">ACHIEVEMENT</p>
+                <h3>${escapeHtml(achievement)}</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="profile-passion-row">
+            <span><i class="fa-solid fa-heart"></i> Hobby: <strong>${escapeHtml(student.hobby)}</strong></span>
+            <span><i class="fa-solid fa-star"></i> Every student has a story.</span>
+          </div>
         </div>
+      </div>
+    </section>`;
+}
 
-    </div>
-
-    <div class="col-md-6">
-
-        <div class="card shadow border-0 rounded-4">
-
-            <div class="card-body">
-
-                <h4>
-
-                    <i class="fa-solid fa-trophy text-warning"></i>
-
-                    Achievement
-
-                </h4>
-
-                <hr>
-
-                <p class="fs-5">
-
-                    No Achievement Yet
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
+if (!selectedGr) {
+  showError('Please select a student from the Students page.');
+} else {
+  fetch('data/students.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Student data could not be loaded.');
+      return response.json();
+    })
+    .then(students => {
+      const student = students.find(item => String(item.gr) === String(selectedGr));
+      if (!student) {
+        showError('The selected student could not be found.');
+        return;
+      }
+      renderProfile(student);
+    })
+    .catch(() => showError('Please check that data/students.json is available and try again.'));
+}
