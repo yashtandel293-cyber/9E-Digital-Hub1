@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration | 9E Digital Hub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container mt-3 mb-4">
+    <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold birthday-title">
+
+            🎂 Birthday Celebration
+
+        </h1>
+
+        <p class="text-muted">
+
+            Celebrate every student in our class ❤️
+
+        </p>
+
+    </div>
+
+    <!-- Today's Birthday -->
+
+    <div id="todayBirthday" class="mb-5"></div>
+
+    <!-- Upcoming Birthday -->
+
+    <div class="mb-5">
+
+        <h3 class="section-title">
+
+            🎉 Upcoming Birthdays
+
+        </h3>
+
+        <div class="row g-4" id="upcomingBirthday">
+
+        </div>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="row justify-content-center mb-5">
+
+        <div class="col-lg-6">
+
+            <div class="input-group input-group-lg">
+
+                <span class="input-group-text">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </span>
+
+                <input
+
+                    type="text"
+
+                    class="form-control"
+
+                    id="birthdaySearch"
+
+                    placeholder="Search Student Name">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Month Wise -->
+
+    <div id="monthContainer">
+
+    </div>
+
+</div>
+
+<script src="birthday.js"></script>
+
+</body>
+
+</html>

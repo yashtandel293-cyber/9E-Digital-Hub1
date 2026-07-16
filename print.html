@@ -1,108 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>9E Digital Hub — Desk Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#083b82; --blue:#1769d1; --gold:#f5b700; --ink:#17243a; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#edf4ff; color:var(--ink); font-family:Poppins,Arial,sans-serif; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    .toolbar { position:sticky; top:0; z-index:20; display:flex; justify-content:center; padding:18px; background:rgba(237,244,255,.96); backdrop-filter:blur(8px); }
+    .toolbar button { border:0; border-radius:999px; background:linear-gradient(135deg,var(--navy),var(--blue)); color:#fff; cursor:pointer; font:600 15px Poppins,sans-serif; padding:12px 24px; box-shadow:0 10px 22px rgba(8,59,130,.26); }
+    .toolbar button:hover { transform:translateY(-1px); }
+    .note { max-width:194mm; margin:0 auto 14px; text-align:center; color:#536477; font-size:12px; }
 
-<title>Print Desk Cards</title>
+    /* Exact printable space after the 8mm A4 page margin: 194mm × 281mm. */
+    .a4-page { width:194mm; height:281mm; margin:0 auto 12mm; display:grid; grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,1fr); gap:4mm; }
+    /* 91mm-high compact card: every item fits inside one of the 3 A4 rows. */
+    .desk-card { min-width:0; min-height:0; overflow:hidden; border:.55mm solid var(--blue); border-radius:4mm; background:#fff; text-align:center; display:flex; flex-direction:column; align-items:center; padding:2.2mm 3.5mm 1.8mm; break-inside:avoid; page-break-inside:avoid; }
+    .card-top { width:calc(100% + 7mm); margin:-2.2mm -3.5mm 1.6mm; padding:1.25mm 2mm; background:linear-gradient(135deg,var(--navy),var(--blue)); color:#fff; font-size:7.4pt; font-weight:700; letter-spacing:.4px; }
+    .student-photo { width:16mm; height:16mm; display:block; flex:0 0 auto; object-fit:cover; border:.7mm solid #d6e8ff; border-radius:50%; }
+    .student-name { min-height:7mm; display:grid; place-items:center; margin:1.1mm 0 .7mm; font-size:8.2pt; font-weight:700; line-height:1.13; text-transform:uppercase; overflow-wrap:anywhere; }
+    .roll-tag { margin:0 0 1mm; color:var(--navy); font-size:6.8pt; font-weight:700; }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    /* QR stays square. The selector is limited to .qr-box, so the student photo is unaffected. */
+    .qr-box { width:30mm; height:30mm; display:grid; place-items:center; flex:0 0 30mm; background:#fff; }
+    /* QRCodeJS creates both a canvas and a fallback image. Keep only the canvas, otherwise two QRs appear. */
+    .qr-box canvas { width:28mm !important; height:28mm !important; display:block !important; aspect-ratio:1 / 1; max-width:none !important; max-height:none !important; margin:0 !important; padding:0 !important; border:0 !important; border-radius:0 !important; clip-path:none !important; transform:none !important; image-rendering:pixelated; }
+    .qr-box img { display:none !important; }
+    .scan-text { margin-top:.7mm; color:#526173; font-size:5.8pt; font-weight:600; }
+    .school-name { margin-top:.6mm; color:#77869a; font-size:5.4pt; line-height:1.1; }
+    .message { width:194mm; margin:35px auto; padding:22px; border-radius:12px; background:#fff; text-align:center; }
 
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-body{
-    background:white;
-    margin:20px;
-}
-
-.print-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:12px;
-
-}
-
-.print-card{
-
-    border:2px solid #ddd;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    text-align:center;
-
-    break-inside:avoid;
-
-}
-
-.print-card img{
-
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #0d47a1;
-
-}
-
-.print-card h4{
-
-    font-size:18px;
-    margin-top:10px;
-    margin-bottom:10px;
-
-}
-
-.print-card canvas{
-border-radius:0 !important;
-    margin:auto;
-
-}
-
-@media print{
-
-button{
-
-display:none;
-
-}
-
-}
-
-</style>
-
+    @page { size:A4 portrait; margin:8mm; }
+    @media print {
+      body { background:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .toolbar, .note { display:none !important; }
+      .a4-page { width:194mm; height:281mm; margin:0; break-after:page; page-break-after:always; }
+      .a4-page:last-child { break-after:auto; page-break-after:auto; }
+      .message { display:none; }
+    }
+    @media screen and (max-width:850px) {
+      .a4-page { transform:scale(.48); transform-origin:top center; margin-bottom:calc(-281mm * .48 + 16mm); }
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="text-center mb-4">
-
-<button class="btn btn-success"
-onclick="window.print()">
-
-🖨 Print Now
-
-</button>
-
-</div>
-
-<div id="printContainer"
-class="print-grid">
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<script src="print.js"></script>
-
+  <div class="toolbar"><button type="button" id="printAllBtn">Print All Desk Cards</button></div>
+  <p class="note">A4 Portrait • 6 cards per page • Print at <strong>Actual size / 100%</strong>. Do not select “Fit to page”.</p>
+  <main id="printContainer" aria-live="polite"><div class="message">Preparing desk cards…</div></main>
+  <!-- qrcodejs is the same browser library that previously generated the visible QR cards. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="print.js"></script>
 </body>
-
 </html>

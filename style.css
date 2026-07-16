@@ -345,3 +345,374 @@ transform:none !important;
 }
 
 }
+/* ===========================
+   Birthday Module
+=========================== */
+
+.birthday-title{
+    font-size:42px;
+    font-weight:700;
+    color:#0d6efd;
+}
+
+.section-title{
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#0d6efd;
+}
+
+.month-title{
+    background:#0d6efd;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:12px;
+    margin-bottom:25px;
+    font-size:26px;
+    font-weight:700;
+}
+
+.birthday-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.birthday-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 14px 30px rgba(13,110,253,.25);
+
+}
+
+.birthday-photo{
+
+    width:110px;
+
+    height:110px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #0d6efd;
+
+    margin-bottom:15px;
+
+}
+
+.birthday-card h4,
+.birthday-card h5{
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.birthday-card p{
+
+    color:#666;
+
+    margin-bottom:15px;
+
+}
+
+.today-card{
+
+    border:4px solid gold;
+
+    animation:glow 2s infinite;
+
+    background:linear-gradient(135deg,#fff7d6,#ffffff);
+
+}
+
+@keyframes glow{
+
+0%{
+
+box-shadow:0 0 10px gold;
+
+}
+
+50%{
+
+box-shadow:0 0 30px orange;
+
+}
+
+100%{
+
+box-shadow:0 0 10px gold;
+
+}
+
+}
+
+.month-section{
+
+    margin-bottom:60px;
+
+}
+
+.btn-primary,
+.btn-warning{
+
+    border-radius:30px;
+
+    padding:8px 20px;
+
+}
+
+@media(max-width:768px){
+
+.birthday-title{
+
+font-size:30px;
+
+}
+
+.section-title{
+
+font-size:24px;
+
+}
+
+.month-title{
+
+font-size:22px;
+
+}
+
+.birthday-photo{
+
+width:90px;
+
+height:90px;
+
+}
+
+}
+.back-home-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#0d6efd;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(13,110,253,.25);
+    transition:.3s;
+}
+
+.back-home-btn:hover{
+    background:#0b5ed7;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.back-home-btn i{
+    font-size:14px;
+}
+/* ==========================
+   Seating Plan
+========================== */
+
+.teacher-table{
+
+    width:320px;
+
+    margin:0 auto 40px;
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.seating-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.seat-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.seat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(13,110,253,.25);
+
+}
+
+.seat-roll{
+
+    background:#0d6efd;
+
+    color:white;
+
+    border-radius:30px;
+
+    padding:8px;
+
+    margin-bottom:12px;
+
+    font-weight:bold;
+
+}
+
+.seat-name{
+
+    font-weight:700;
+
+    font-size:16px;
+
+}
+
+@media(max-width:992px){
+
+.seating-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:576px){
+
+.seating-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.bench-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.bench-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.bench-title{
+
+    background:#0d6efd;
+
+    color:white;
+
+    text-align:center;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.bench-student{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:8px 10px;
+
+    border-bottom:1px solid #eee;
+
+    cursor:pointer;
+
+}
+
+.bench-student:last-child{
+
+    border-bottom:none;
+
+}
+
+.bench-student:hover{
+
+    background:#f5f9ff;
+
+    border-radius:8px;
+
+}
+
+.roll-no{
+
+    font-weight:bold;
+
+    color:#0d6efd;
+
+}
+
+.student-name{
+
+    font-weight:600;
+
+}
