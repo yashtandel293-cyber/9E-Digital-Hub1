@@ -1,0 +1,153 @@
+/* ===========================
+   CLASSROOM
+=========================== */
+
+.classroom{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    background:#f5f5f5;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+
+/* Blackboard */
+
+.blackboard{
+
+    width:420px;
+    max-width:90%;
+
+    margin:auto;
+
+    background:#1b4d2c;
+    color:#fff;
+
+    font-size:30px;
+    font-weight:bold;
+
+    text-align:center;
+
+    padding:20px;
+
+    border:12px solid #8B5A2B;
+
+    border-radius:10px;
+
+    margin-bottom:60px;
+
+}
+
+
+/* Seating Area */
+
+.seating-area{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    row-gap:45px;
+
+    column-gap:70px;
+
+    justify-items:center;
+
+}
+
+
+/* Bench */
+
+.bench{
+
+    width:220px;
+
+    min-height:140px;
+
+    background:linear-gradient(#d49a58,#b87430);
+
+    border-radius:10px;
+
+    border:4px solid #7b4b18;
+
+    padding:12px;
+
+    box-shadow:0 5px 10px rgba(0,0,0,.25);
+
+}
+
+
+/* Student */
+
+.student{
+    background:#fff;
+    border-radius:8px;
+    margin:6px 0;
+    padding:6px 10px;
+    cursor:pointer;
+    transition:.25s;
+    font-size:13px;   /* પહેલાં 14px હતું */
+    font-weight:600;
+}
+
+.student:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* Teacher */
+
+.teacher-zone{
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+}
+
+.teacher-table{
+    background:#6b3f15;
+    color:#fff;
+    padding:15px 60px;
+    border-radius:12px;
+    font-size:22px;
+    font-weight:bold;
+    border:4px solid #4b2d0d;
+    box-shadow:0 5px 12px rgba(0,0,0,.25);
+}
+.classroom-layout{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px 70px;
+
+    justify-items:center;
+
+    margin-top:40px;
+
+}
+.student{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:10px !important;
+    font-weight:500;
+}
+
+.roll-no{
+    font-size:15px !important;
+    font-weight:700;
+    color:#0d6efd;
+    min-width:20px;
+}
+
+.student-name{
+    font-size:13px !important;
+    font-weight:600;
+    color:#0f2d63;
+}
