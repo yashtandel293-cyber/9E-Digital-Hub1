@@ -716,3 +716,104 @@ grid-template-columns:1fr;
     font-weight:600;
 
 }
+.class-teacher-section{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+.teacher-card{
+
+    max-width:320px;
+
+    margin:auto;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.teacher-card img{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #0d6efd;
+
+}
+
+.teacher-card h3{
+
+    margin-top:20px;
+
+}
+
+.profile-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 25px;
+
+    background:#0d6efd;
+
+    color:white;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+}
+.teacher-card-link{
+    text-decoration:none;
+    color:inherit;
+    display:inline-block;
+}
+
+.teacher-card{
+    transition:.35s;
+    cursor:pointer;
+}
+
+.teacher-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.teacher-card img{
+
+    transition:.35s;
+
+}
+
+.teacher-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.teacher-message{
+    background:#f8f9ff;
+    border-left:4px solid #0d6efd;
+    padding:12px;
+    border-radius:10px;
+    margin-top:18px;
+    font-size:14px;
+    color:#555;
+}
