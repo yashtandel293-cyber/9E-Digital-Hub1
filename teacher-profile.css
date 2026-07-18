@@ -1,14 +1,14 @@
 body{
-.gujarati{
-    font-family: 'Baloo Bhai 2', cursive;
-}
-}
     margin:0;
 
     font-family:'Poppins',sans-serif;
 
     background:#f4f7fb;
 
+}
+
+.gujarati{
+    font-family: 'Baloo Bhai 2', cursive;
 }
 
 .profile-header{
@@ -306,10 +306,10 @@ body{
     margin:auto;
 
     color:#fff !important;
-    .quote-text{
-    font-family: 'Baloo Bhai 2', cursive;
 }
 
+.quote-text.gujarati{
+    font-family: 'Baloo Bhai 2', cursive;
 }
 
 .quote-author{

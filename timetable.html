@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timetable | 9E Digital Hub</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="timetable.css">
+</head>
+
+<body>
+
+<div class="container mt-3 mb-4">
+    <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<div class="container pb-5">
+
+    <h1 class="text-center fw-bold mb-2">📅 Class 9-E Timetable</h1>
+    <p class="text-center text-muted mb-5">
+        Subject પર <strong>hover</strong> કરો (desktop) અથવા <strong>tap</strong> કરો (mobile) — શિક્ષકની પ્રોફાઇલ જોવા માટે
+    </p>
+
+    <div id="timetableStatus" class="text-center text-muted mb-3">
+        <i class="fa-solid fa-circle-notch fa-spin"></i> Loading timetable…
+    </div>
+
+    <div class="table-responsive timetable-wrap">
+        <table class="table timetable-table" id="timetableTable" style="display:none;">
+            <thead>
+                <tr id="timetableHeadRow"></tr>
+            </thead>
+            <tbody id="timetableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Hover Popover (desktop) -->
+<div id="teacherPopover" class="teacher-popover">
+    <img id="popoverPhoto" src="" alt="">
+    <div class="popover-info">
+        <h5 id="popoverName"></h5>
+        <p id="popoverSubject"></p>
+    </div>
+</div>
+
+<!-- Click Modal (full profile, desktop + mobile) -->
+<div class="modal fade" id="teacherModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content teacher-modal-content">
+      <button type="button" class="btn-close teacher-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="teacher-modal-cover">
+        <img id="modalPhoto" src="" alt="">
+        <h3 id="modalName"></h3>
+        <p id="modalSubjectTag"></p>
+      </div>
+      <div class="teacher-modal-body">
+        <div class="teacher-modal-info">
+          <div><i class="fa-solid fa-graduation-cap"></i><span id="modalQualification"></span></div>
+          <div><i class="fa-solid fa-briefcase"></i><span id="modalExperience"></span></div>
+        </div>
+        <p class="teacher-modal-message" id="modalMessage"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="timetable.js"></script>
+
+</body>
+</html>

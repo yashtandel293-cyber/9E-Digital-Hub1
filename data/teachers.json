@@ -1,0 +1,83 @@
+[
+  {
+    "id": "T1",
+    "name": "Yash Tandel",
+    "subject": "ગણિત (Mathematics)",
+    "photo": "teacher/yash.png",
+    "qualification": "B.Sc., B.Ed., M.Ed.",
+    "experience": "2 Years as Government Teacher",
+    "message": "Welcome to Class 9E! Let's learn, explore and grow together."
+  },
+  {
+    "id": "T2",
+    "name": "Harshaben Patel",
+    "subject": "વિજ્ઞાન (Science)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T3",
+    "name": "Mansukhbhai Vasava",
+    "subject": "હિન્દી (Hindi)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T4",
+    "name": "Hetalben Parmar",
+    "subject": "અંગ્રેજી (English)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T5",
+    "name": "Navinbhai Gamit",
+    "subject": "ગુજરાતી / સામાજિક વિજ્ઞાન (Gujarati / Social Science)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T6",
+    "name": "Jigneshbhai Patel",
+    "subject": "શા. કે. (Physical Training)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T7",
+    "name": "Ranjanben Patel",
+    "subject": "સંસ્કૃત (Sanskrit)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T8",
+    "name": "Nilaybhai Chaudhari",
+    "subject": "ATL",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  },
+  {
+    "id": "T9",
+    "name": "Mayurikaben Chaudhari",
+    "subject": "કોમ્પ્યુટર (Computer)",
+    "photo": "teacher/placeholder.png",
+    "qualification": "",
+    "experience": "",
+    "message": ""
+  }
+]

@@ -1,0 +1,160 @@
+/* ===========================
+   9E DIGITAL HUB — TIMETABLE MODULE
+=========================== */
+
+.timetable-wrap{
+    background:#fff;
+    border-radius:22px;
+    padding:1.2rem;
+    box-shadow:0 14px 32px rgba(18,55,120,.09);
+    overflow-x:auto;
+}
+
+.timetable-table{
+    margin:0;
+    min-width:760px;
+    border-collapse:separate;
+    border-spacing:0 10px;
+}
+
+.timetable-table thead th{
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+    font-size:.82rem;
+    padding:.85rem .5rem;
+    border:none;
+}
+.timetable-table thead th:first-child{ border-radius:14px 0 0 14px; text-align:left; padding-left:1.1rem; }
+.timetable-table thead th:last-child{ border-radius:0 14px 14px 0; }
+.timetable-table thead th .period-time{ display:block; font-weight:500; font-size:.68rem; opacity:.85; margin-top:.15rem; }
+
+.timetable-table tbody td{
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+    padding:.6rem .4rem;
+    background:#f8fbff;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--ink);
+}
+.timetable-table tbody td:first-child{
+    font-weight:800;
+    color:var(--blue);
+    text-align:left;
+    padding-left:1.1rem;
+    border-radius:14px 0 0 14px;
+    background:#eef4ff;
+}
+.timetable-table tbody td:last-child{ border-radius:0 14px 14px 0; }
+
+.break-row td{
+    border-radius:12px!important;
+    background:transparent!important;
+    padding:.35rem .4rem!important;
+}
+
+.period-col-head{ text-align:left!important; }
+
+.subject-cell{
+    cursor:pointer;
+    border-radius:12px;
+    padding:.55rem .4rem;
+    transition:.2s ease;
+    background:#fff;
+    border:1px solid rgba(20,65,140,.08);
+}
+.subject-cell:hover{
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 12px 22px rgba(18,55,120,.22);
+}
+
+.break-cell{
+    background:linear-gradient(135deg,#fff8e5,#fff3cf);
+    color:#8a6500;
+    font-weight:800;
+    letter-spacing:.05em;
+    font-size:.72rem;
+    border-radius:12px;
+}
+
+.empty-cell{ background:transparent; }
+
+/* Hover popover (desktop only) */
+.teacher-popover{
+    position:fixed;
+    z-index:1200;
+    display:none;
+    align-items:center;
+    gap:.75rem;
+    max-width:260px;
+    background:#fff;
+    border-radius:16px;
+    padding:.7rem .9rem;
+    box-shadow:0 18px 40px rgba(18,55,120,.28);
+    border:1px solid rgba(20,65,140,.08);
+    pointer-events:none;
+}
+.teacher-popover img{
+    width:52px; height:52px; border-radius:50%; object-fit:cover;
+    border:3px solid var(--gold);
+    flex:0 0 auto;
+}
+.teacher-popover h5{ margin:0; font-size:.88rem; font-weight:800; color:var(--blue); }
+.teacher-popover p{ margin:0; font-size:.74rem; color:var(--muted); font-weight:600; }
+
+/* Click modal */
+.teacher-modal-content{
+    border:none;
+    border-radius:26px;
+    overflow:hidden;
+}
+.teacher-modal-close{
+    position:absolute;
+    top:14px; right:14px;
+    z-index:5;
+    background:rgba(255,255,255,.9)!important;
+    border-radius:50%;
+    opacity:1;
+}
+.teacher-modal-cover{
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff;
+    text-align:center;
+    padding:2.6rem 1.5rem 2rem;
+}
+.teacher-modal-cover img{
+    width:120px; height:120px; border-radius:50%; object-fit:cover;
+    border:5px solid #fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    margin-bottom:.9rem;
+}
+.teacher-modal-cover h3{ margin:0; font-weight:800; }
+.teacher-modal-cover p{ margin:.2rem 0 0; opacity:.9; font-weight:600; font-size:.9rem; }
+.teacher-modal-body{ padding:1.6rem 1.8rem 2rem; }
+.teacher-modal-info{ display:flex; flex-wrap:wrap; gap:.8rem; margin-bottom:1.1rem; }
+.teacher-modal-info div{
+    flex:1 1 auto;
+    display:flex; align-items:center; gap:.55rem;
+    background:#f4f8ff; border-radius:14px; padding:.7rem .9rem;
+    font-size:.82rem; font-weight:700; color:#334155;
+}
+.teacher-modal-info i{ color:var(--blue-2); }
+.teacher-modal-message{
+    background:#f8f9ff;
+    border-left:4px solid var(--blue);
+    padding:.9rem 1rem;
+    border-radius:10px;
+    font-size:.86rem;
+    color:#555;
+    margin:0;
+}
+
+@media (max-width:575.98px){
+    .timetable-table{ min-width:640px; }
+    .teacher-popover{ display:none!important; }
+}

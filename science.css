@@ -1,0 +1,160 @@
+/* ===========================
+   9E DIGITAL HUB — MATHS PUZZLE & SCIENCE VIRTUAL LAB
+=========================== */
+
+.lab-card{
+    height:100%;
+    background:#fff;
+    border-radius:22px;
+    padding:1.6rem;
+    box-shadow:0 14px 32px rgba(18,55,120,.09);
+    border:1px solid rgba(20,65,140,.06);
+}
+.lab-card h4{
+    color:var(--blue);
+    font-weight:800;
+    font-size:1.05rem;
+    margin-bottom:.6rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+.lab-card h4 i{ color:var(--blue-2); }
+.lab-desc{ color:var(--muted); font-size:.86rem; margin-bottom:1rem; }
+
+.lab-btn{
+    border:none;
+    border-radius:999px;
+    padding:.6rem 1.3rem;
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff;
+    font-weight:700;
+    font-size:.85rem;
+    cursor:pointer;
+    transition:.2s ease;
+}
+.lab-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(37,99,235,.28); }
+.lab-btn-outline{
+    background:#fff;
+    color:var(--blue);
+    border:2px solid var(--blue);
+}
+
+.lab-hint-btn{
+    background:none;
+    border:none;
+    color:var(--gold);
+    font-weight:700;
+    font-size:.8rem;
+    margin-top:.7rem;
+    cursor:pointer;
+    padding:0;
+}
+.lab-hint-text{
+    margin-top:.5rem;
+    font-size:.78rem;
+    color:#8a6500;
+    background:#fff8e5;
+    padding:.6rem .8rem;
+    border-radius:10px;
+}
+
+.lab-input{
+    width:100%;
+    border:1.5px solid #dbe6fb;
+    border-radius:12px;
+    padding:.6rem .8rem;
+    margin-bottom:.8rem;
+    font-size:.9rem;
+    font-weight:600;
+}
+.lab-input:focus{ outline:none; border-color:var(--blue-2); }
+
+.lab-result{
+    margin-top:.8rem;
+    font-weight:700;
+    font-size:.85rem;
+    min-height:1.2rem;
+}
+.lab-result.correct{ color:#15803d; }
+.lab-result.wrong{ color:#dc2626; }
+.riddle-answer{
+    background:#eef4ff;
+    padding:.7rem .9rem;
+    border-radius:10px;
+    color:#164a9a;
+    font-weight:600;
+}
+
+/* Magic Square */
+.magic-square{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.5rem;
+    max-width:220px;
+    margin:0 auto 1rem;
+}
+.ms-cell{
+    aspect-ratio:1;
+    text-align:center;
+    font-size:1.2rem;
+    font-weight:800;
+    border-radius:12px;
+    border:2px solid #dbe6fb;
+    color:var(--blue);
+}
+.ms-cell:disabled{
+    background:#eef4ff;
+    color:var(--muted);
+}
+.ms-cell:focus{ outline:none; border-color:var(--blue-2); }
+
+/* Sequence */
+.sequence-display{
+    text-align:center;
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--blue);
+    background:#eef4ff;
+    border-radius:14px;
+    padding:.9rem;
+    margin-bottom:1rem;
+}
+.seq-blank{ color:var(--gold); }
+
+/* Pendulum */
+#pendulumCanvas{
+    display:block;
+    width:100%;
+    max-width:340px;
+    margin:0 auto 1rem;
+    background:#f4f8ff;
+    border-radius:16px;
+}
+.lab-slider-row{ margin-bottom:1rem; }
+.lab-slider-row label{ font-size:.82rem; font-weight:700; color:var(--ink); display:block; margin-bottom:.35rem; }
+.lab-slider-row input[type="range"]{ width:100%; accent-color:var(--blue-2); }
+.lab-controls{ display:flex; gap:.7rem; flex-wrap:wrap; margin-bottom:1rem; }
+.lab-formula{
+    text-align:center;
+    font-size:.82rem;
+    font-weight:700;
+    color:var(--blue);
+    background:#f8f9ff;
+    border-left:4px solid var(--blue);
+    padding:.7rem .9rem;
+    border-radius:10px;
+    margin:0;
+}
+
+/* Circuit */
+.circuit-box{
+    background:#f4f8ff;
+    border-radius:16px;
+    padding:1rem;
+    margin-bottom:1rem;
+}
+.circuit-svg{ width:100%; max-width:320px; display:block; margin:0 auto; }
+#bulbCircle{ transition:fill .3s ease, filter .3s ease; }
+#bulbCircle.bulb-on{ fill:#fde047; filter:drop-shadow(0 0 12px #fde047); }
+#switchLever{ transition:.3s ease; }
