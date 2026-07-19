@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seating Poster | 9E Digital Hub</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="poster-seating.css">
+</head>
+<body>
+
+<div class="toolbar">
+    <button type="button" id="printBtn"><i class="fa-solid fa-print"></i> Print Poster</button>
+    <a href="seating.html" class="toolbar-link"><i class="fa-solid fa-arrow-left"></i> Back to Seating Plan</a>
+</div>
+<p class="note">
+    Poster size: <strong>36 in × 24 in (3 ft × 2 ft)</strong>, Landscape — Print at <strong>Actual Size / 100%</strong>
+    (Custom paper size 36×24 in), "Fit to page" પસંદ ન કરવું.
+</p>
+
+<div class="poster" id="posterSheet">
+
+    <!-- Header -->
+    <header class="poster-header">
+        <div class="poster-brand">
+            <img src="Images/logo.png" alt="School Logo" class="poster-logo" onerror="this.style.display='none'">
+            <div>
+                <h1>Shree N. D. Desai Sarvajanik High School, Vankal</h1>
+                <p>Class 9-E &nbsp;|&nbsp; Academic Year 2026–27 &nbsp;|&nbsp; Class Teacher: Yash Tandel</p>
+            </div>
+        </div>
+        <div class="poster-title-badge">
+            <i class="fa-solid fa-chair"></i>
+            <span>SEATING CHART</span>
+            <small>Teacher's Quick Reference</small>
+        </div>
+    </header>
+
+    <!-- Seating Grid -->
+    <div class="poster-room">
+        <div class="poster-grid" id="posterGrid"></div>
+
+        <div class="front-strip">
+            <i class="fa-solid fa-chalkboard"></i>
+            <span>FRONT OF CLASS — BLACKBOARD &amp; TEACHER'S TABLE</span>
+            <i class="fa-solid fa-chalkboard"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="poster-footer">
+        <div class="footer-note">
+            <i class="fa-solid fa-circle-info"></i>
+            દરેક ખાનામાં Roll No. અને વિદ્યાર્થીનું નામ છે — જગ્યા ખાલી દેખાય તો એ વિદ્યાર્થી ગેરહાજર છે.
+        </div>
+        <div class="footer-legend">
+            <span><i class="fa-solid fa-square legend-box"></i> Occupied Seat Reference</span>
+        </div>
+    </footer>
+
+</div>
+
+<script src="poster-seating.js"></script>
+
+</body>
+</html>

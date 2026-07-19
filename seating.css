@@ -1,142 +1,230 @@
 /* ===========================
-   CLASSROOM
+   9E DIGITAL HUB — CLASSROOM SEATING PLAN
 =========================== */
 
-.classroom{
-    width:100%;
+.classroom-room{
+    position:relative;
     max-width:1400px;
     margin:auto;
-    background:#f5f5f5;
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    background:
+        linear-gradient(#f3ede0 0%, #f3ede0 78%, #dff0e4 78%, #dff0e4 100%);
+    border:10px solid #c9a876;
+    border-radius:18px;
+    padding:0 2.2rem 1.4rem;
+    box-shadow:0 24px 55px rgba(18,55,120,.2);
+    overflow:hidden;
 }
 
+/* dado line on wall (typical classroom two-tone paint) */
+.wall-strip{
+    position:absolute;
+    top:calc(78% - 4px);
+    left:0; right:0;
+    height:4px;
+    background:#8a6a3f;
+    z-index:1;
+}
 
-/* Blackboard */
+/* ---------- Ceiling lights (tube lights) ---------- */
+.ceiling-light{
+    position:absolute;
+    bottom:14px;
+    width:110px;
+    height:12px;
+    background:linear-gradient(90deg,#fff9d6,#fff,#fff9d6);
+    border:2px solid #cbb98a;
+    border-radius:6px;
+    box-shadow:0 -6px 18px rgba(255,244,180,.6);
+    z-index:1;
+}
+.light-1{ left:22%; }
+.light-2{ right:22%; }
 
+/* ---------- Windows ---------- */
+.room-window{
+    position:absolute;
+    bottom:56px;
+    width:64px;
+    height:130px;
+    background:linear-gradient(180deg,#bfe3ff,#8fc8f2);
+    border:6px solid #8a6a3f;
+    border-radius:6px;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5), 0 8px 16px rgba(0,0,0,.15);
+    z-index:1;
+}
+.room-window span{ position:absolute; background:#8a6a3f; }
+.room-window span:first-child{ left:50%; top:0; bottom:0; width:6px; transform:translateX(-50%); }
+.room-window span:last-child{ top:50%; left:0; right:0; height:6px; transform:translateY(-50%); }
+.window-left{ left:10px; }
+.window-right{ right:10px; }
+
+/* ---------- Door ---------- */
+.room-door{
+    position:absolute;
+    right:92px;
+    bottom:56px;
+    width:52px;
+    height:130px;
+    background:linear-gradient(135deg,#b9793f,#8a5a2b);
+    border:4px solid #6b431c;
+    border-radius:4px 4px 0 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.75);
+    font-size:1.1rem;
+    z-index:1;
+}
+
+/* ---------- Front Wall: Board + Teacher (stacked, facing the class) ---------- */
+.front-wall{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-bottom:10px;
+    margin-top:1.8rem;
+}
+
+.blackboard-unit{ display:flex; flex-direction:column; align-items:center; }
 .blackboard{
-
-    width:420px;
-    max-width:90%;
-
-    margin:auto;
-
+    width:440px;
+    max-width:88vw;
     background:#1b4d2c;
     color:#fff;
-
-    font-size:30px;
-    font-weight:bold;
-
+    font-size:26px;
+    font-weight:800;
     text-align:center;
-
     padding:20px;
-
-    border:12px solid #8B5A2B;
-
-    border-radius:10px;
-
-    margin-bottom:60px;
-
+    border:10px solid #8B5A2B;
+    border-bottom:none;
+    border-radius:8px 8px 0 0;
+    box-shadow:0 10px 22px rgba(0,0,0,.22);
+}
+.chalk-tray{
+    width:440px;
+    max-width:88vw;
+    height:16px;
+    background:linear-gradient(180deg,#a97a41,#8B5A2B);
+    border:10px solid #8B5A2B;
+    border-top:none;
+    border-radius:0 0 8px 8px;
+    box-shadow:0 8px 14px rgba(0,0,0,.2);
 }
 
+.teacher-figure{
+    margin-top:.4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.teacher-avatar{
+    font-size:70px;
+    line-height:1;
+    filter:drop-shadow(0 10px 12px rgba(0,0,0,.3));
+}
+.teacher-shadow{
+    width:60px; height:12px;
+    background:rgba(0,0,0,.18);
+    border-radius:50%;
+    filter:blur(2px);
+    margin-top:-4px;
+}
+.teacher-table{
+    margin-top:.6rem;
+    background:linear-gradient(180deg,#8a5a2b,#6b431c);
+    color:#fff;
+    padding:10px 30px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    border:3px solid #4b2d0d;
+    box-shadow:0 8px 16px rgba(0,0,0,.28);
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
 
-/* Seating Area */
+/* ---------- Floor ---------- */
+.classroom{
+    position:relative;
+    z-index:2;
+    background:
+        repeating-linear-gradient(90deg, #e9c99a 0, #e9c99a 70px, #dcb27f 70px, #dcb27f 74px);
+    border-radius:14px;
+    padding:2.4rem 2rem 3rem;
+    box-shadow:inset 0 8px 22px rgba(0,0,0,.1), inset 0 -4px 10px rgba(0,0,0,.06);
+}
 
-.seating-area{
-
+.classroom-layout{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
-    row-gap:45px;
-
-    column-gap:70px;
-
+    gap:40px 55px;
     justify-items:center;
-
 }
 
-
-/* Bench */
-
+/* ---------- Bench (desk + seat, 2.5D wooden look via pseudo-elements) ---------- */
 .bench{
-
-    width:220px;
-
-    min-height:140px;
-
-    background:linear-gradient(#d49a58,#b87430);
-
-    border-radius:10px;
-
-    border:4px solid #7b4b18;
-
-    padding:12px;
-
-    box-shadow:0 5px 10px rgba(0,0,0,.25);
-
+    position:relative;
+    width:210px;
+    min-height:150px;
+    margin-top:26px;         /* room for the front seat lip below */
+    background:
+        repeating-linear-gradient(100deg, rgba(255,255,255,.06) 0 3px, transparent 3px 9px),
+        linear-gradient(180deg,#d9a561,#b87430);
+    border-radius:8px 8px 3px 3px;
+    border:3px solid #7b4b18;
+    border-top:8px solid #a6672a;
+    padding:12px 12px 22px;
+    box-shadow:0 12px 22px rgba(0,0,0,.3);
 }
 
+/* front seat plank, sits lower + slightly forward = bench-desk combo look */
+.bench::before{
+    content:"";
+    position:absolute;
+    left:14px; right:14px;
+    bottom:-24px;
+    height:22px;
+    background:linear-gradient(180deg,#c98a4c,#9c6329);
+    border:3px solid #6b431c;
+    border-radius:0 0 6px 6px;
+    box-shadow:0 8px 14px rgba(0,0,0,.28);
+}
 
-/* Student */
+/* legs peeking below the seat plank */
+.bench::after{
+    content:"";
+    position:absolute;
+    left:22px; right:22px;
+    bottom:-34px;
+    height:12px;
+    background:
+        linear-gradient(#5a3818,#5a3818) left/10px 100% no-repeat,
+        linear-gradient(#5a3818,#5a3818) right/10px 100% no-repeat;
+    background-color:transparent;
+}
 
 .student{
     background:#fff;
     border-radius:8px;
-    margin:6px 0;
+    margin:5px 0;
     padding:6px 10px;
     cursor:pointer;
     transition:.25s;
-    font-size:13px;   /* પહેલાં 14px હતું */
-    font-weight:600;
-}
-
-.student:hover{
-
-    transform:scale(1.05);
-
-}
-
-
-/* Teacher */
-
-.teacher-zone{
-    margin-top:60px;
-    display:flex;
-    justify-content:center;
-}
-
-.teacher-table{
-    background:#6b3f15;
-    color:#fff;
-    padding:15px 60px;
-    border-radius:12px;
-    font-size:22px;
-    font-weight:bold;
-    border:4px solid #4b2d0d;
-    box-shadow:0 5px 12px rgba(0,0,0,.25);
-}
-.classroom-layout{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:45px 70px;
-
-    justify-items:center;
-
-    margin-top:40px;
-
-}
-.student{
+    font-size:10px !important;
+    font-weight:500;
     display:flex;
     align-items:center;
     gap:8px;
-
-    font-size:10px !important;
-    font-weight:500;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+    position:relative;
+    z-index:2;
+}
+.student:hover{
+    transform:scale(1.06) translateY(-2px);
+    box-shadow:0 10px 18px rgba(0,0,0,.22);
 }
 
 .roll-no{
@@ -145,9 +233,24 @@
     color:#0d6efd;
     min-width:20px;
 }
-
 .student-name{
     font-size:13px !important;
     font-weight:600;
     color:#0f2d63;
+}
+
+@media (max-width:991.98px){
+    .room-window, .room-door, .ceiling-light{ display:none; }
+    .classroom-room{ padding:0 1.2rem 1rem; }
+    .wall-strip{ top:calc(72% - 4px); }
+    .classroom-layout{ grid-template-columns:repeat(2,1fr); gap:34px 24px; }
+    .bench{ width:100%; }
+    .front-wall{ margin-top:1.2rem; }
+    .blackboard, .chalk-tray{ width:100%; }
+    .blackboard{ font-size:20px; padding:14px; }
+    .teacher-avatar{ font-size:52px; }
+}
+
+@media print{
+    .room-window, .room-door, .ceiling-light{ display:none; }
 }
