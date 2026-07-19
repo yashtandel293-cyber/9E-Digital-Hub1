@@ -23,7 +23,7 @@
 <div class="container pb-5">
 
     <h1 class="text-center fw-bold mb-2">🧠 Maths Puzzle & 🔬 Science Virtual Lab</h1>
-    <p class="text-center text-muted mb-5">રમતાં રમતાં શીખો — Solve, Play, Discover!</p>
+    <p class="text-center text-muted mb-5">કાર્ડ પર ક્લિક કરો અને રમો — Solve, Play, Discover!</p>
 
     <!-- ============ MATHS PUZZLE ZONE ============ -->
     <section class="mb-5">
@@ -33,57 +33,54 @@
         </div>
 
         <div class="row g-4">
-
-            <!-- Puzzle 1: Magic Square -->
-            <div class="col-lg-4">
-                <div class="lab-card">
-                    <h4><i class="fa-solid fa-table-cells"></i> Magic Square</h4>
-                    <p class="lab-desc">દરેક row, column અને diagonal નો સરવાળો <strong>15</strong> થાય એ રીતે ખાલી ખાનાં ભરો.</p>
-                    <div class="magic-square" id="magicSquare">
-                        <input type="text" class="ms-cell" data-answer="2" value="2" disabled>
-                        <input type="text" class="ms-cell" data-answer="7" maxlength="1">
-                        <input type="text" class="ms-cell" data-answer="6" value="6" disabled>
-                        <input type="text" class="ms-cell" data-answer="9" maxlength="1">
-                        <input type="text" class="ms-cell" data-answer="5" value="5" disabled>
-                        <input type="text" class="ms-cell" data-answer="1" maxlength="1">
-                        <input type="text" class="ms-cell" data-answer="4" maxlength="1">
-                        <input type="text" class="ms-cell" data-answer="3" value="3" disabled>
-                        <input type="text" class="ms-cell" data-answer="8" maxlength="1">
-                    </div>
-                    <button class="lab-btn" id="checkMagicSquare"><i class="fa-solid fa-check"></i> Check Answer</button>
-                    <p class="lab-result" id="magicSquareResult"></p>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#magicSquareModal">
+                    <i class="fa-solid fa-table-cells"></i>
+                    <span>Magic Square</span>
+                    <small>Sum = 15 પઝલ</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
                 </div>
             </div>
-
-            <!-- Puzzle 2: Number Sequence -->
-            <div class="col-lg-4">
-                <div class="lab-card">
-                    <h4><i class="fa-solid fa-arrow-up-1-9"></i> Number Sequence</h4>
-                    <p class="lab-desc">પેટર્ન ઓળખો અને આગળની સંખ્યા લખો:</p>
-                    <div class="sequence-display">2, 6, 12, 20, 30, <span class="seq-blank">?</span></div>
-                    <input type="number" class="lab-input" id="sequenceInput" placeholder="તમારો જવાબ લખો">
-                    <button class="lab-btn" id="checkSequence"><i class="fa-solid fa-check"></i> Check Answer</button>
-                    <p class="lab-result" id="sequenceResult"></p>
-                    <button class="lab-hint-btn" id="sequenceHint"><i class="fa-solid fa-lightbulb"></i> Hint</button>
-                    <p class="lab-hint-text" id="sequenceHintText" style="display:none;">દરેક પદ વચ્ચેનો તફાવત જુઓ: 4, 6, 8, 10... આગળનો તફાવત શું હશે?</p>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#sequenceModal">
+                    <i class="fa-solid fa-arrow-up-1-9"></i>
+                    <span>Number Sequence</span>
+                    <small>પેટર્ન ઓળખો</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
                 </div>
             </div>
-
-            <!-- Puzzle 3: Logic Riddle -->
-            <div class="col-lg-4">
-                <div class="lab-card">
-                    <h4><i class="fa-solid fa-brain"></i> Logic Riddle</h4>
-                    <p class="lab-desc" id="riddleQuestion">
-                        એક ખેડૂત પાસે 17 બકરાં છે. બધાં પણ એક પણ મરી ગયું નહીં, છતાં તેની પાસે
-                        9 બકરાં બચ્યાં. કેમ?
-                    </p>
-                    <button class="lab-btn" id="revealRiddle"><i class="fa-solid fa-eye"></i> જવાબ જુઓ</button>
-                    <p class="lab-result riddle-answer" id="riddleAnswer" style="display:none;">
-                        જવાબ: તેણે 8 બકરાં વેચી દીધા (17 − 8 = 9). "મરી ગયું નહીં" નો અર્થ "વેચ્યું નહીં" નથી!
-                    </p>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#riddleModal">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>Logic Riddle</span>
+                    <small>વિચારો અને જવાબ આપો</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
                 </div>
             </div>
-
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#geometryModal">
+                    <i class="fa-solid fa-draw-polygon"></i>
+                    <span>Geometry Challenge</span>
+                    <small>ખૂટતો ખૂણો શોધો</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#sudokuModal">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <span>Sudoku</span>
+                    <small>4×4 Mini Sudoku</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#mentalMathsModal">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                    <span>Mental Maths</span>
+                    <small>ઝડપી ગણતરી</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -95,64 +92,368 @@
         </div>
 
         <div class="row g-4">
-
-            <!-- Experiment 1: Simple Pendulum -->
-            <div class="col-lg-6">
-                <div class="lab-card">
-                    <h4><i class="fa-solid fa-clock"></i> Simple Pendulum</h4>
-                    <p class="lab-desc">Length બદલીને જુઓ pendulum ના swing પર શું અસર થાય છે.</p>
-
-                    <canvas id="pendulumCanvas" width="340" height="260"></canvas>
-
-                    <div class="lab-slider-row">
-                        <label for="lengthSlider">Length: <span id="lengthValue">100</span> cm</label>
-                        <input type="range" id="lengthSlider" min="40" max="180" value="100">
-                    </div>
-
-                    <div class="lab-controls">
-                        <button class="lab-btn" id="pendulumPlay"><i class="fa-solid fa-play"></i> Start</button>
-                        <button class="lab-btn lab-btn-outline" id="pendulumReset"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-                    </div>
-
-                    <p class="lab-formula">T = 2π√(L/g) &nbsp; | &nbsp; Time Period ≈ <span id="periodValue">-</span> sec</p>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#pendulumModal">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Simple Pendulum</span>
+                    <small>Swing experiment</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
                 </div>
             </div>
-
-            <!-- Experiment 2: Simple Circuit -->
-            <div class="col-lg-6">
-                <div class="lab-card">
-                    <h4><i class="fa-solid fa-bolt"></i> Simple Electric Circuit</h4>
-                    <p class="lab-desc">Switch ON/OFF કરીને bulb પર અસર જુઓ.</p>
-
-                    <div class="circuit-box">
-                        <svg viewBox="0 0 300 180" class="circuit-svg">
-                            <!-- wires -->
-                            <path d="M 40 40 H 260 V 140 H 40 Z" fill="none" stroke="#334155" stroke-width="4"/>
-                            <!-- battery -->
-                            <rect x="20" y="70" width="16" height="40" fill="#334155"/>
-                            <text x="8" y="65" font-size="12" fill="#334155">+</text>
-                            <!-- bulb -->
-                            <circle id="bulbCircle" cx="150" cy="40" r="20" fill="#e2e8f0" stroke="#334155" stroke-width="3"/>
-                            <line x1="140" y1="32" x2="160" y2="48" stroke="#334155" stroke-width="2"/>
-                            <line x1="160" y1="32" x2="140" y2="48" stroke="#334155" stroke-width="2"/>
-                            <!-- switch -->
-                            <circle cx="250" cy="140" r="4" fill="#334155"/>
-                            <circle cx="220" cy="140" r="4" fill="#334155"/>
-                            <line id="switchLever" x1="220" y1="140" x2="250" y2="120" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="lab-controls justify-content-center">
-                        <button class="lab-btn" id="switchToggle"><i class="fa-solid fa-power-off"></i> Switch ON</button>
-                    </div>
-
-                    <p class="lab-formula" id="circuitStatus">Switch OFF — Circuit is open, current વહેતો નથી, bulb બંધ છે.</p>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#circuitModal">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Electric Circuit</span>
+                    <small>Switch ON/OFF</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
                 </div>
             </div>
-
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#solarModal">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span>Solar System</span>
+                    <small>ગ્રહો પર ક્લિક કરો</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#microscopeModal">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Microscope</span>
+                    <small>Zoom in કરો</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#magnetismModal">
+                    <i class="fa-solid fa-magnet"></i>
+                    <span>Magnetism</span>
+                    <small>Field lines & Compass</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="lab-launch-card" data-bs-toggle="modal" data-bs-target="#reflectionModal">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Reflection</span>
+                    <small>Angle of incidence</small>
+                    <button class="lab-play-btn"><i class="fa-solid fa-play"></i> Open</button>
+                </div>
+            </div>
         </div>
     </section>
 
+</div>
+
+<!-- ============ MODAL: MAGIC SQUARE ============ -->
+<div class="modal fade" id="magicSquareModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-table-cells"></i> Magic Square</h4>
+        <p class="lab-desc">દરેક row, column અને diagonal નો સરવાળો <strong>15</strong> થાય એ રીતે ખાલી ખાનાં ભરો.</p>
+        <div class="magic-square" id="magicSquare">
+            <input type="text" class="ms-cell" data-answer="2" value="2" disabled>
+            <input type="text" class="ms-cell" data-answer="7" maxlength="1">
+            <input type="text" class="ms-cell" data-answer="6" value="6" disabled>
+            <input type="text" class="ms-cell" data-answer="9" maxlength="1">
+            <input type="text" class="ms-cell" data-answer="5" value="5" disabled>
+            <input type="text" class="ms-cell" data-answer="1" maxlength="1">
+            <input type="text" class="ms-cell" data-answer="4" maxlength="1">
+            <input type="text" class="ms-cell" data-answer="3" value="3" disabled>
+            <input type="text" class="ms-cell" data-answer="8" maxlength="1">
+        </div>
+        <button class="lab-btn" id="checkMagicSquare"><i class="fa-solid fa-check"></i> Check Answer</button>
+        <p class="lab-result" id="magicSquareResult"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: NUMBER SEQUENCE ============ -->
+<div class="modal fade" id="sequenceModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-arrow-up-1-9"></i> Number Sequence</h4>
+        <p class="lab-desc">પેટર્ન ઓળખો અને આગળની સંખ્યા લખો:</p>
+        <div class="sequence-display">2, 6, 12, 20, 30, <span class="seq-blank">?</span></div>
+        <input type="number" class="lab-input" id="sequenceInput" placeholder="તમારો જવાબ લખો">
+        <button class="lab-btn" id="checkSequence"><i class="fa-solid fa-check"></i> Check Answer</button>
+        <p class="lab-result" id="sequenceResult"></p>
+        <button class="lab-hint-btn" id="sequenceHint"><i class="fa-solid fa-lightbulb"></i> Hint</button>
+        <p class="lab-hint-text" id="sequenceHintText" style="display:none;">દરેક પદ વચ્ચેનો તફાવત જુઓ: 4, 6, 8, 10... આગળનો તફાવત શું હશે?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: LOGIC RIDDLE ============ -->
+<div class="modal fade" id="riddleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-brain"></i> Logic Riddle</h4>
+        <p class="lab-desc" id="riddleQuestion">
+            એક ખેડૂત પાસે 17 બકરાં છે. બધાં પણ એક પણ મરી ગયું નહીં, છતાં તેની પાસે
+            9 બકરાં બચ્યાં. કેમ?
+        </p>
+        <button class="lab-btn" id="revealRiddle"><i class="fa-solid fa-eye"></i> જવાબ જુઓ</button>
+        <p class="lab-result riddle-answer" id="riddleAnswer" style="display:none;">
+            જવાબ: તેણે 8 બકરાં વેચી દીધા (17 − 8 = 9). "મરી ગયું નહીં" નો અર્થ "વેચ્યું નહીં" નથી!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: PENDULUM ============ -->
+<div class="modal fade" id="pendulumModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-clock"></i> Simple Pendulum</h4>
+        <p class="lab-desc">Length બદલીને જુઓ pendulum ના swing પર શું અસર થાય છે.</p>
+
+        <canvas id="pendulumCanvas" width="340" height="260"></canvas>
+
+        <div class="lab-slider-row">
+            <label for="lengthSlider">Length: <span id="lengthValue">100</span> cm</label>
+            <input type="range" id="lengthSlider" min="40" max="180" value="100">
+        </div>
+
+        <div class="lab-controls">
+            <button class="lab-btn" id="pendulumPlay"><i class="fa-solid fa-play"></i> Start</button>
+            <button class="lab-btn lab-btn-outline" id="pendulumReset"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+        </div>
+
+        <p class="lab-formula">T = 2π√(L/g) &nbsp; | &nbsp; Time Period ≈ <span id="periodValue">-</span> sec</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: CIRCUIT ============ -->
+<div class="modal fade" id="circuitModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-bolt"></i> Simple Electric Circuit</h4>
+        <p class="lab-desc">Switch ON/OFF કરીને bulb પર અસર જુઓ.</p>
+
+        <div class="circuit-box">
+            <svg viewBox="0 0 300 180" class="circuit-svg">
+                <path d="M 40 40 H 260 V 140 H 40 Z" fill="none" stroke="#334155" stroke-width="4"/>
+                <rect x="20" y="70" width="16" height="40" fill="#334155"/>
+                <text x="8" y="65" font-size="12" fill="#334155">+</text>
+                <circle id="bulbCircle" cx="150" cy="40" r="20" fill="#e2e8f0" stroke="#334155" stroke-width="3"/>
+                <line x1="140" y1="32" x2="160" y2="48" stroke="#334155" stroke-width="2"/>
+                <line x1="160" y1="32" x2="140" y2="48" stroke="#334155" stroke-width="2"/>
+                <circle cx="250" cy="140" r="4" fill="#334155"/>
+                <circle cx="220" cy="140" r="4" fill="#334155"/>
+                <line id="switchLever" x1="220" y1="140" x2="250" y2="120" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <div class="lab-controls justify-content-center">
+            <button class="lab-btn" id="switchToggle"><i class="fa-solid fa-power-off"></i> Switch ON</button>
+        </div>
+
+        <p class="lab-formula" id="circuitStatus">Switch OFF — Circuit is open, current વહેતો નથી, bulb બંધ છે.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: GEOMETRY CHALLENGE ============ -->
+<div class="modal fade" id="geometryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-draw-polygon"></i> Geometry Challenge</h4>
+        <p class="lab-desc">ત્રિકોણના બે ખૂણા આપેલા છે — ત્રીજો ખૂટતો ખૂણો શોધો (ત્રિકોણના ખૂણાનો સરવાળો હંમેશા 180° હોય છે).</p>
+
+        <svg viewBox="0 0 220 140" class="geometry-svg">
+            <polygon points="20,120 200,120 110,20" fill="#eef4ff" stroke="#0b3d91" stroke-width="3"/>
+            <text id="geoAngleA" x="35" y="112" font-size="14" font-weight="700" fill="#0b3d91">50°</text>
+            <text id="geoAngleB" x="165" y="112" font-size="14" font-weight="700" fill="#0b3d91">60°</text>
+            <text id="geoAngleC" x="98" y="42" font-size="14" font-weight="700" fill="#dc2626">?</text>
+        </svg>
+
+        <input type="number" class="lab-input" id="geometryInput" placeholder="ખૂટતો ખૂણો (ડિગ્રીમાં) લખો">
+        <div class="lab-controls">
+            <button class="lab-btn" id="checkGeometry"><i class="fa-solid fa-check"></i> Check Answer</button>
+            <button class="lab-btn lab-btn-outline" id="nextGeometry"><i class="fa-solid fa-forward"></i> Next Question</button>
+        </div>
+        <p class="lab-result" id="geometryResult"></p>
+        <p class="lab-formula" id="geometryScore">Score: 0 / 0</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: SUDOKU ============ -->
+<div class="modal fade" id="sudokuModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-table-cells-large"></i> 4×4 Mini Sudoku</h4>
+        <p class="lab-desc">દરેક row, column અને 2×2 box માં 1, 2, 3, 4 — એકવાર જ આવવા જોઈએ.</p>
+        <div class="sudoku-grid" id="sudokuGrid"></div>
+        <button class="lab-btn" id="checkSudoku"><i class="fa-solid fa-check"></i> Check Answer</button>
+        <p class="lab-result" id="sudokuResult"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: MENTAL MATHS ============ -->
+<div class="modal fade" id="mentalMathsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-bolt-lightning"></i> Mental Maths</h4>
+        <p class="lab-desc">ઝડપી ગણતરી કરો — જવાબ લખીને Check દબાવો.</p>
+        <div class="sequence-display" id="mentalQuestion">– + – = ?</div>
+        <input type="number" class="lab-input" id="mentalInput" placeholder="જવાબ લખો">
+        <div class="lab-controls">
+            <button class="lab-btn" id="checkMental"><i class="fa-solid fa-check"></i> Check</button>
+            <button class="lab-btn lab-btn-outline" id="nextMental"><i class="fa-solid fa-forward"></i> Next</button>
+        </div>
+        <p class="lab-result" id="mentalResult"></p>
+        <p class="lab-formula" id="mentalScore">Score: 0 / 0</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: SOLAR SYSTEM ============ -->
+<div class="modal fade" id="solarModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-earth-americas"></i> Solar System</h4>
+        <p class="lab-desc">કોઈ પણ ગ્રહ પર ક્લિક કરો — તેની માહિતી નીચે દેખાશે.</p>
+
+        <svg viewBox="0 0 480 220" class="solar-svg" id="solarSvg">
+            <circle cx="20" cy="110" r="16" fill="#f4b400" class="planet-dot" data-planet="sun"/>
+            <circle cx="70" cy="110" r="6" fill="#b0b0b0" class="planet-dot" data-planet="mercury"/>
+            <circle cx="105" cy="110" r="8" fill="#e0b060" class="planet-dot" data-planet="venus"/>
+            <circle cx="150" cy="110" r="9" fill="#2a6df4" class="planet-dot" data-planet="earth"/>
+            <circle cx="195" cy="110" r="7" fill="#c1440e" class="planet-dot" data-planet="mars"/>
+            <circle cx="260" cy="110" r="16" fill="#d9a066" class="planet-dot" data-planet="jupiter"/>
+            <circle cx="320" cy="110" r="14" fill="#e8d191" class="planet-dot" data-planet="saturn"/>
+            <circle cx="375" cy="110" r="11" fill="#a3d9e0" class="planet-dot" data-planet="uranus"/>
+            <circle cx="420" cy="110" r="11" fill="#4062bb" class="planet-dot" data-planet="neptune"/>
+        </svg>
+
+        <div class="solar-info" id="solarInfo">
+            <strong>ગ્રહ પસંદ કરો</strong>
+            <p>ઉપર આપેલા કોઈ પણ ગોળા પર ક્લિક કરીને તેની વિગત જુઓ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: MICROSCOPE ============ -->
+<div class="modal fade" id="microscopeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-magnifying-glass"></i> Virtual Microscope</h4>
+        <p class="lab-desc">Zoom slider ખસેડીને cell ની અંદરની રચના જુઓ.</p>
+
+        <div class="microscope-view">
+            <div class="microscope-zoom" id="microscopeZoom">
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="90" fill="#dff5e1" stroke="#4c9a5b" stroke-width="4"/>
+                    <circle cx="100" cy="100" r="35" fill="#a7d8ff" stroke="#1769d1" stroke-width="3" class="mic-nucleus"/>
+                    <circle cx="80" cy="70" r="6" fill="#4c9a5b" class="mic-detail"/>
+                    <circle cx="130" cy="60" r="5" fill="#4c9a5b" class="mic-detail"/>
+                    <circle cx="140" cy="130" r="7" fill="#4c9a5b" class="mic-detail"/>
+                    <circle cx="60" cy="140" r="5" fill="#4c9a5b" class="mic-detail"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="lab-slider-row">
+            <label for="microscopeSlider">Zoom: <span id="microscopeZoomValue">1</span>×</label>
+            <input type="range" id="microscopeSlider" min="1" max="10" value="1">
+        </div>
+
+        <p class="lab-formula" id="microscopeLabel">1× — સંપૂર્ણ કોષ (Cell) દેખાય છે</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: MAGNETISM ============ -->
+<div class="modal fade" id="magnetismModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-magnet"></i> Magnetism</h4>
+        <p class="lab-desc">Field lines બતાવો અને Poles ફેરવીને compass ની needle પર અસર જુઓ.</p>
+
+        <svg viewBox="0 0 300 180" class="magnet-svg">
+            <g id="fieldLines" class="field-lines">
+                <path d="M 70 60 Q 150 10 230 60" fill="none" stroke="#0b3d91" stroke-width="2"/>
+                <path d="M 70 90 Q 150 55 230 90" fill="none" stroke="#0b3d91" stroke-width="2"/>
+                <path d="M 70 120 Q 150 145 230 120" fill="none" stroke="#0b3d91" stroke-width="2"/>
+                <path d="M 70 150 Q 150 190 230 150" fill="none" stroke="#0b3d91" stroke-width="2"/>
+            </g>
+            <rect id="magnetN" x="60" y="70" width="70" height="40" fill="#dc2626"/>
+            <rect id="magnetS" x="170" y="70" width="70" height="40" fill="#1769d1"/>
+            <text id="labelN" x="88" y="96" font-size="18" font-weight="800" fill="#fff">N</text>
+            <text id="labelS" x="198" y="96" font-size="18" font-weight="800" fill="#fff">S</text>
+
+            <circle cx="150" cy="30" r="16" fill="#fff" stroke="#334155" stroke-width="2"/>
+            <line id="compassNeedle" x1="150" y1="38" x2="150" y2="22" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+
+        <div class="lab-controls justify-content-center">
+            <button class="lab-btn" id="toggleField"><i class="fa-solid fa-wave-square"></i> Show Field Lines</button>
+            <button class="lab-btn lab-btn-outline" id="flipPoles"><i class="fa-solid fa-arrows-rotate"></i> Flip Poles</button>
+        </div>
+
+        <p class="lab-formula" id="magnetismStatus">Compass needle N pole તરફ (ડાબે) નિર્દેશ કરે છે.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: REFLECTION ============ -->
+<div class="modal fade" id="reflectionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content lab-modal-content">
+      <button type="button" class="btn-close lab-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body lab-modal-body">
+        <h4><i class="fa-solid fa-lightbulb"></i> Law of Reflection</h4>
+        <p class="lab-desc">Slider ખસેડો — આપાત કોણ (angle of incidence) = પરાવર્તન કોણ (angle of reflection).</p>
+
+        <canvas id="reflectionCanvas" width="300" height="220"></canvas>
+
+        <div class="lab-slider-row">
+            <label for="reflectionSlider">Angle: <span id="reflectionAngleValue">40</span>°</label>
+            <input type="range" id="reflectionSlider" min="10" max="80" value="40">
+        </div>
+
+        <p class="lab-formula">∠ Incidence = ∠ Reflection = <span id="reflectionAngleEcho">40</span>°</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

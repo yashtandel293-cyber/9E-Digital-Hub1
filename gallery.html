@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | 9E Digital Hub</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<div class="container mt-3 mb-4">
+    <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<div class="container pb-5">
+
+    <h1 class="text-center fw-bold mb-2">📸 Class 9-E Gallery</h1>
+    <p class="text-center text-muted mb-5">શાળાની વિવિધ પ્રવૃત્તિઓ અને યાદો — Event પસંદ કરો</p>
+
+    <!-- Breadcrumb -->
+    <div class="gallery-breadcrumb mb-4" id="galleryBreadcrumb" style="display:none;">
+        <button class="crumb-btn" id="crumbHome"><i class="fa-solid fa-house"></i> બધા Events</button>
+        <span id="crumbEventWrap" style="display:none;">
+            <i class="fa-solid fa-angle-right"></i>
+            <button class="crumb-btn" id="crumbEvent"></button>
+        </span>
+        <span id="crumbYearWrap" style="display:none;">
+            <i class="fa-solid fa-angle-right"></i>
+            <span class="crumb-current" id="crumbYear"></span>
+        </span>
+    </div>
+
+    <!-- STEP 1: Event Cards -->
+    <div id="eventGrid" class="row g-4"></div>
+
+    <!-- STEP 2: Year Cards -->
+    <div id="yearGrid" class="row g-4 justify-content-center" style="display:none;"></div>
+
+    <!-- STEP 3: Photo Grid -->
+    <div id="photoGrid" class="photo-grid" style="display:none;"></div>
+
+    <div id="galleryEmpty" class="gallery-empty" style="display:none;">
+        <i class="fa-solid fa-images"></i>
+        <p>આ વર્ષ માટે હજુ ફોટા ઉમેરાયા નથી.</p>
+    </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="gallery.js"></script>
+
+</body>
+</html>

@@ -2,24 +2,81 @@
    9E DIGITAL HUB — MATHS PUZZLE & SCIENCE VIRTUAL LAB
 =========================== */
 
-.lab-card{
-    height:100%;
+/* Launcher cards (grid view) */
+.lab-launch-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
     background:#fff;
+    border:1px solid rgba(20,65,140,.08);
     border-radius:22px;
-    padding:1.6rem;
-    box-shadow:0 14px 32px rgba(18,55,120,.09);
-    border:1px solid rgba(20,65,140,.06);
+    box-shadow:0 12px 27px rgba(18,55,120,.08);
+    padding:1.6rem 1rem;
+    height:100%;
+    cursor:pointer;
+    transition:.25s ease;
 }
-.lab-card h4{
+.lab-launch-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 38px rgba(18,55,120,.18);
+    border-color:rgba(37,99,235,.25);
+}
+.lab-launch-card i{
+    font-size:2.1rem;
+    color:var(--blue-2);
+    margin-bottom:.7rem;
+}
+.lab-launch-card span{
+    font-size:1rem;
+    font-weight:800;
+    color:var(--blue);
+}
+.lab-launch-card small{
+    color:var(--muted);
+    font-size:.75rem;
+    margin:.25rem 0 1rem;
+}
+.lab-play-btn{
+    margin-top:auto;
+    border:none;
+    border-radius:999px;
+    padding:.5rem 1.3rem;
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff;
+    font-weight:700;
+    font-size:.8rem;
+    pointer-events:none; /* whole card is clickable */
+}
+
+/* Modal shell */
+.lab-modal-content{
+    border:none;
+    border-radius:26px;
+    overflow:hidden;
+}
+.lab-modal-close{
+    position:absolute;
+    top:14px; right:14px;
+    z-index:5;
+    background:rgba(255,255,255,.9)!important;
+    border-radius:50%;
+    opacity:1;
+}
+.lab-modal-body{
+    padding:2.2rem 1.8rem 1.8rem;
+}
+.lab-modal-body h4{
     color:var(--blue);
     font-weight:800;
-    font-size:1.05rem;
+    font-size:1.15rem;
     margin-bottom:.6rem;
     display:flex;
     align-items:center;
     gap:.5rem;
 }
-.lab-card h4 i{ color:var(--blue-2); }
+.lab-modal-body h4 i{ color:var(--blue-2); }
+
 .lab-desc{ color:var(--muted); font-size:.86rem; margin-bottom:1rem; }
 
 .lab-btn{
@@ -86,22 +143,25 @@
     font-weight:600;
 }
 
-/* Magic Square */
+/* Magic Square — fixed pixel cells (robust across browsers) */
 .magic-square{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, 64px);
+    grid-template-rows:repeat(3, 64px);
     gap:.5rem;
-    max-width:220px;
-    margin:0 auto 1rem;
+    justify-content:center;
+    margin:0 auto 1.2rem;
 }
 .ms-cell{
-    aspect-ratio:1;
+    width:64px;
+    height:64px;
     text-align:center;
     font-size:1.2rem;
     font-weight:800;
     border-radius:12px;
     border:2px solid #dbe6fb;
     color:var(--blue);
+    padding:0;
 }
 .ms-cell:disabled{
     background:#eef4ff;
@@ -158,3 +218,109 @@
 #bulbCircle{ transition:fill .3s ease, filter .3s ease; }
 #bulbCircle.bulb-on{ fill:#fde047; filter:drop-shadow(0 0 12px #fde047); }
 #switchLever{ transition:.3s ease; }
+
+/* ===========================
+   NEW MODULES — Geometry, Sudoku, Mental Maths,
+   Solar System, Microscope, Magnetism, Reflection
+=========================== */
+
+/* Geometry Challenge */
+.geometry-svg{
+    display:block;
+    width:100%;
+    max-width:260px;
+    margin:0 auto 1.1rem;
+    background:#f8fbff;
+    border-radius:14px;
+}
+
+/* Sudoku */
+.sudoku-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 56px);
+    grid-template-rows:repeat(4, 56px);
+    gap:4px;
+    justify-content:center;
+    margin:0 auto 1.2rem;
+    background:#0b3d91;
+    padding:4px;
+    border-radius:12px;
+    width:max-content;
+}
+.sudoku-cell{
+    width:56px;
+    height:56px;
+    text-align:center;
+    font-size:1.15rem;
+    font-weight:800;
+    border:none;
+    border-radius:4px;
+    color:var(--blue);
+    background:#fff;
+}
+.sudoku-cell:disabled{ background:#eef4ff; color:var(--muted); }
+.sudoku-cell:focus{ outline:2px solid var(--blue-2); }
+/* thicker lines around each 2x2 box */
+.sudoku-cell.box-right{ margin-right:4px; }
+.sudoku-cell.box-bottom{ margin-bottom:4px; }
+
+/* Solar System */
+.solar-svg{
+    display:block;
+    width:100%;
+    background:#0b1e3f;
+    border-radius:16px;
+    margin-bottom:1.1rem;
+}
+.planet-dot{ cursor:pointer; transition:.2s ease; }
+.planet-dot:hover{ filter:brightness(1.3); transform:scale(1.15); transform-origin:center; }
+.solar-info{
+    background:#eef4ff;
+    border-radius:14px;
+    padding:1rem 1.2rem;
+    font-size:.85rem;
+    color:#1e3a5f;
+}
+.solar-info strong{ color:var(--blue); display:block; margin-bottom:.3rem; font-size:.95rem; }
+
+/* Microscope */
+.microscope-view{
+    width:220px;
+    height:220px;
+    margin:0 auto 1rem;
+    border-radius:50%;
+    overflow:hidden;
+    background:#000;
+    border:10px solid #334155;
+    box-shadow:0 14px 28px rgba(0,0,0,.25);
+}
+.microscope-zoom{
+    width:100%;
+    height:100%;
+    transition:transform .3s ease;
+    transform-origin:center;
+}
+.mic-detail{ opacity:0; transition:opacity .3s ease; }
+
+/* Magnetism */
+.magnet-svg{
+    display:block;
+    width:100%;
+    max-width:300px;
+    margin:0 auto 1rem;
+    background:#f8fbff;
+    border-radius:14px;
+}
+.field-lines{ opacity:0; transition:opacity .3s ease; }
+.field-lines.show{ opacity:1; }
+#compassNeedle{ transition:transform .4s ease; transform-origin:150px 30px; }
+
+/* Reflection */
+#reflectionCanvas{
+    display:block;
+    width:100%;
+    max-width:300px;
+    margin:0 auto 1rem;
+    background:#f4f8ff;
+    border-radius:16px;
+}

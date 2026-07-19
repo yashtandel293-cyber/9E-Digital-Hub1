@@ -1,0 +1,104 @@
+{
+  "events": [
+    {
+      "id": "praveshotsav",
+      "title": "પ્રવેશોત્સવ",
+      "subtitle": "Praveshotsav",
+      "icon": "fa-solid fa-door-open",
+      "years": {
+        "2025-26": ["praveshotsav-2025-01.jpg", "praveshotsav-2025-02.jpg", "praveshotsav-2025-03.jpg", "praveshotsav-2025-04.jpg", "praveshotsav-2025-05.jpg"],
+        "2026-27": ["praveshotsav-2026-01.jpg", "praveshotsav-2026-02.jpg", "praveshotsav-2026-03.jpg", "praveshotsav-2026-04.jpg", "praveshotsav-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "udghatan-samaroh",
+      "title": "ઉદ્ઘાટન સમારોહ",
+      "subtitle": "Udghatan Samaroh",
+      "icon": "fa-solid fa-ribbon",
+      "years": {
+        "2025-26": ["udghatan-samaroh-2025-01.jpg", "udghatan-samaroh-2025-02.jpg", "udghatan-samaroh-2025-03.jpg", "udghatan-samaroh-2025-04.jpg", "udghatan-samaroh-2025-05.jpg"],
+        "2026-27": ["udghatan-samaroh-2026-01.jpg", "udghatan-samaroh-2026-02.jpg", "udghatan-samaroh-2026-03.jpg", "udghatan-samaroh-2026-04.jpg", "udghatan-samaroh-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "independence-day",
+      "title": "સ્વાતંત્ર્ય દિન",
+      "subtitle": "Independence Day",
+      "icon": "fa-solid fa-flag",
+      "years": {
+        "2025-26": ["independence-day-2025-01.jpg", "independence-day-2025-02.jpg", "independence-day-2025-03.jpg", "independence-day-2025-04.jpg", "independence-day-2025-05.jpg"],
+        "2026-27": ["independence-day-2026-01.jpg", "independence-day-2026-02.jpg", "independence-day-2026-03.jpg", "independence-day-2026-04.jpg", "independence-day-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "anand-melo",
+      "title": "આનંદ મેળો",
+      "subtitle": "Anand Melo",
+      "icon": "fa-solid fa-store",
+      "years": {
+        "2025-26": ["anand-melo-2025-01.jpg", "anand-melo-2025-02.jpg", "anand-melo-2025-03.jpg", "anand-melo-2025-04.jpg", "anand-melo-2025-05.jpg"],
+        "2026-27": ["anand-melo-2026-01.jpg", "anand-melo-2026-02.jpg", "anand-melo-2026-03.jpg", "anand-melo-2026-04.jpg", "anand-melo-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "science-fair",
+      "title": "સાયન્સ ફેર",
+      "subtitle": "Science Fair",
+      "icon": "fa-solid fa-flask",
+      "years": {
+        "2025-26": ["science-fair-2025-01.jpg", "science-fair-2025-02.jpg", "science-fair-2025-03.jpg", "science-fair-2025-04.jpg", "science-fair-2025-05.jpg"],
+        "2026-27": ["science-fair-2026-01.jpg", "science-fair-2026-02.jpg", "science-fair-2026-03.jpg", "science-fair-2026-04.jpg", "science-fair-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "maths-olympiad",
+      "title": "ગણિત ઓલિમ્પિયાડ",
+      "subtitle": "Maths Olympiad",
+      "icon": "fa-solid fa-medal",
+      "years": {
+        "2025-26": ["maths-olympiad-2025-01.jpg", "maths-olympiad-2025-02.jpg", "maths-olympiad-2025-03.jpg", "maths-olympiad-2025-04.jpg", "maths-olympiad-2025-05.jpg"],
+        "2026-27": ["maths-olympiad-2026-01.jpg", "maths-olympiad-2026-02.jpg", "maths-olympiad-2026-03.jpg", "maths-olympiad-2026-04.jpg", "maths-olympiad-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "ramanujam-maths-club",
+      "title": "રામાનુજન મેથ્સ ક્લબ",
+      "subtitle": "Ramanujam Maths Club",
+      "icon": "fa-solid fa-square-root-variable",
+      "years": {
+        "2025-26": ["ramanujam-maths-club-2025-01.jpg", "ramanujam-maths-club-2025-02.jpg", "ramanujam-maths-club-2025-03.jpg", "ramanujam-maths-club-2025-04.jpg", "ramanujam-maths-club-2025-05.jpg"],
+        "2026-27": ["ramanujam-maths-club-2026-01.jpg", "ramanujam-maths-club-2026-02.jpg", "ramanujam-maths-club-2026-03.jpg", "ramanujam-maths-club-2026-04.jpg", "ramanujam-maths-club-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "stem-quiz",
+      "title": "STEM ક્વિઝ",
+      "subtitle": "STEM Quiz",
+      "icon": "fa-solid fa-circle-question",
+      "years": {
+        "2025-26": ["stem-quiz-2025-01.jpg", "stem-quiz-2025-02.jpg", "stem-quiz-2025-03.jpg", "stem-quiz-2025-04.jpg", "stem-quiz-2025-05.jpg"],
+        "2026-27": ["stem-quiz-2026-01.jpg", "stem-quiz-2026-02.jpg", "stem-quiz-2026-03.jpg", "stem-quiz-2026-04.jpg", "stem-quiz-2026-05.jpg"]
+      }
+    },
+    {
+      "id": "ai-seminar",
+      "title": "AI સેમિનાર",
+      "subtitle": "AI Seminar",
+      "icon": "fa-solid fa-robot",
+      "years": {
+        "2025-26": ["ai-seminar-2025-26-01.jpg", "ai-seminar-2025-26-02.jpg", "ai-seminar-2025-26-03.jpg", "ai-seminar-2025-26-04.jpg", "ai-seminar-2025-26-05.jpg"],
+        "2026-27": ["ai-seminar-2026-27-01.jpg", "ai-seminar-2026-27-02.jpg", "ai-seminar-2026-27-03.jpg", "ai-seminar-2026-27-04.jpg", "ai-seminar-2026-27-05.jpg"]
+      }
+    },
+    {
+      "id": "my-classroom",
+      "title": "મારો ક્લાસરૂમ",
+      "subtitle": "My Classroom",
+      "icon": "fa-solid fa-chalkboard-user",
+      "years": {
+        "2025-26": ["my-classroom-2025-26-01.jpg", "my-classroom-2025-26-02.jpg", "my-classroom-2025-26-03.jpg", "my-classroom-2025-26-04.jpg", "my-classroom-2025-26-05.jpg"],
+        "2026-27": ["my-classroom-2026-27-01.jpg", "my-classroom-2026-27-02.jpg", "my-classroom-2026-27-03.jpg", "my-classroom-2026-27-04.jpg", "my-classroom-2026-27-05.jpg"]
+      }
+    }
+  ]
+}
