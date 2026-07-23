@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Attendance | 9E Digital Hub</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="attendance-view.css">
+</head>
+<body>
+
+<div class="container mt-3 mb-3">
+    <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<div class="container pb-5">
+
+    <h1 class="text-center fw-bold mb-1">✅ Today's Attendance</h1>
+    <p class="text-center text-muted mb-4" id="dateLabel">Loading date...</p>
+
+    <div class="row g-3 mb-4 justify-content-center">
+        <div class="col-6 col-md-3">
+            <div class="att-stat present-stat">
+                <i class="fa-solid fa-user-check"></i>
+                <strong id="presentTotal">-</strong>
+                <span>Present</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="att-stat absent-stat">
+                <i class="fa-solid fa-user-xmark"></i>
+                <strong id="absentTotal">-</strong>
+                <span>Absent</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        <button class="lab-btn" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Refresh</button>
+    </div>
+
+    <div id="attStatus" class="text-center text-muted mb-3">
+        <i class="fa-solid fa-circle-notch fa-spin"></i> Loading attendance...
+    </div>
+
+    <div class="row g-4" style="display:none;" id="attContent">
+        <div class="col-md-6">
+            <h4 class="att-col-title present-title"><i class="fa-solid fa-circle-check"></i> Present</h4>
+            <div id="presentList" class="att-list"></div>
+        </div>
+        <div class="col-md-6">
+            <h4 class="att-col-title absent-title"><i class="fa-solid fa-circle-xmark"></i> Absent</h4>
+            <div id="absentList" class="att-list"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="attendance-view.js"></script>
+
+</body>
+</html>

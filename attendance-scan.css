@@ -1,0 +1,54 @@
+/* ===========================
+   9E DIGITAL HUB — ATTENDANCE SCANNER
+=========================== */
+
+.scan-container{ max-width:480px; margin:0 auto; }
+
+#reader{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 14px 32px rgba(18,55,120,.14);
+    margin-bottom:1.2rem;
+}
+
+.scan-status{
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+    background:#eef4ff;
+    border-radius:16px;
+    padding:1rem 1.2rem;
+    font-weight:700;
+    font-size:.95rem;
+    color:var(--blue);
+    margin-bottom:1rem;
+    transition:.25s ease;
+}
+.scan-status i{ font-size:1.4rem; }
+.scan-status.success{ background:#dcfce7; color:#15803d; }
+.scan-status.duplicate{ background:#fff8e5; color:#92650a; }
+.scan-status.error{ background:#fee2e2; color:#b91c1c; }
+
+.scan-count{
+    text-align:center;
+    font-size:1rem;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:1.4rem;
+}
+.scan-count strong{ color:var(--blue); font-size:1.3rem; }
+
+.view-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    text-decoration:none;
+    border:none;
+    border-radius:999px;
+    padding:.75rem 1.5rem;
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    color:#fff !important;
+    font-weight:700;
+    font-size:.9rem;
+}

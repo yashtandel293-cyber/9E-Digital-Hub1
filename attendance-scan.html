@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Scanner | 9E Digital Hub</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="attendance-scan.css">
+</head>
+<body>
+
+<div class="container mt-3 mb-3">
+    <a href="index.html" class="back-home-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<div class="container pb-5 scan-container">
+
+    <h1 class="text-center fw-bold mb-1">📷 Attendance Scanner</h1>
+    <p class="text-center text-muted mb-4">તમારો QR કાર્ડ camera સામે ધરો</p>
+
+    <div id="reader"></div>
+
+    <div id="scanStatus" class="scan-status idle">
+        <i class="fa-solid fa-qrcode"></i>
+        <span>Scan કરવા માટે તૈયાર...</span>
+    </div>
+
+    <div class="scan-count">
+        આજે hajar: <strong id="presentCount">0</strong>
+    </div>
+
+    <a href="attendance-view.html" class="lab-btn view-link"><i class="fa-solid fa-list-check"></i> Today's Attendance જુઓ</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="attendance-scan.js"></script>
+
+</body>
+</html>
