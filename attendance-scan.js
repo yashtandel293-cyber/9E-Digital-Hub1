@@ -1,4 +1,14 @@
 // ==========================
+// ===== Teacher Password Protection =====
+const PASSWORD = "Yash3010@";
+
+const enteredPassword = prompt("🔒 Enter Teacher Password");
+
+if (enteredPassword !== PASSWORD) {
+    alert("❌ Incorrect Password!");
+    window.location.href = "index.html";   // અથવા તારી Home Page
+    throw new Error("Unauthorized Access");
+}
 // 9E Digital Hub — Attendance Scanner
 // ==========================
 
