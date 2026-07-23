@@ -6,6 +6,9 @@
 const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwxAWGb5iRpMo_tjPGXlW6Siuoo-o6abZTNE4oWlBxaZ70w1S8NtnAMJfPeKGqpUVXh7Q/exec";
 
 let students = [];
+let currentCamera = "environment";
+let html5QrCode = new Html5Qrcode("reader");
+let scannerRunning = false;
 let presentCount = 0;
 let lastScannedGr = null;
 let lastScanTime = 0;
@@ -89,13 +92,43 @@ function onScanFailure() {
     // ignore — this fires continuously while no QR is in frame
 }
 
-const html5QrCode = new Html5Qrcode("reader");
-html5QrCode.start(
-    { facingMode: "environment" },
-    { fps: 10, qrbox: { width: 250, height: 250 } },
-    onScanSuccess,
-    onScanFailure
-).catch(err => {
-    setStatus('error', 'fa-camera', 'Camera શરૂ ન થયો — permission આપો અથવા HTTPS પર ખોલો.');
-    console.error(err);
+function startScanner(camera){
+
+    html5QrCode.start(
+        { facingMode: camera },
+        {
+            fps: 10,
+            qrbox: {
+                width: 250,
+                height: 250
+            }
+        },
+        onScanSuccess,
+        onScanFailure
+    )
+    .then(() => {
+        scannerRunning = true;
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+}
+
+startScanner(currentCamera);
+document.getElementById("switchCameraBtn").addEventListener("click", function(){
+
+    if(!scannerRunning) return;
+
+    html5QrCode.stop().then(()=>{
+
+        currentCamera =
+            currentCamera === "environment"
+            ? "user"
+            : "environment";
+
+        startScanner(currentCamera);
+
+    });
+
 });
